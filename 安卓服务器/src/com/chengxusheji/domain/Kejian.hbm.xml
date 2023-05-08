@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Kejian" table="Kejian">
+
+          <!-- 主键记录编号 -->
+          <id name="id" column="id">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 课件标题 -->
+          <property
+            name="title"
+            column="title"
+            type="string"
+            length="40"
+          />
+
+          <!-- 简单字符串属性: 文件路径 -->
+          <property
+            name="path"
+            column="path"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 添加时间 -->
+          <property
+            name="addTime"
+            column="addTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

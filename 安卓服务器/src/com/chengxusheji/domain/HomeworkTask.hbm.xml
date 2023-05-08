@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="HomeworkTask" table="HomeworkTask">
+
+          <!-- 主键记录编号 -->
+          <id name="homeworkId" column="homeworkId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 老师 -->
+          <many-to-one name="teacherObj"
+            column="teacherObj"
+            class="Teacher"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 作业标题 -->
+          <property
+            name="title"
+            column="title"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 作业内容 -->
+          <property
+            name="content"
+            column="content"
+            type="string"
+            length="1000"
+          />
+
+          <!-- 简单字符串属性: 发布时间 -->
+          <property
+            name="addTime"
+            column="addTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

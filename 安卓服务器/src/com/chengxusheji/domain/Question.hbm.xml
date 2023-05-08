@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Question" table="Question">
+
+          <!-- 主键记录编号 -->
+          <id name="id" column="id">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 提问的老师 -->
+          <many-to-one name="teacherId"
+            column="teacherId"
+            class="Teacher"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 提问者 -->
+          <property
+            name="questioner"
+            column="questioner"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 提问内容 -->
+          <property
+            name="content"
+            column="content"
+            type="string"
+            length="200"
+          />
+
+          <!-- 简单字符串属性: 回复内容 -->
+          <property
+            name="reply"
+            column="reply"
+            type="string"
+            length="200"
+          />
+
+          <!-- 简单字符串属性: 提问时间 -->
+          <property
+            name="addTime"
+            column="addTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

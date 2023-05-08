@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Student" table="Student">
+
+          <!-- 主键学号 -->
+          <id name="studentNumber" type="string" length="20">
+            <generator class="assigned"/>
+          </id>
+
+          <!-- 简单字符串属性: 登陆密码 -->
+          <property
+            name="password"
+            column="password"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 姓名 -->
+          <property
+            name="name"
+            column="name"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 性别 -->
+          <property
+            name="sex"
+            column="sex"
+            type="string"
+            length="4"
+          />
+
+          <!-- 简单日期型属性: 出生日期 -->
+          <property
+            name="birthday"
+            column="birthday"
+            	type="timestamp"
+            	length="10"
+          />
+
+          <!-- 简单字符串属性: 政治面貌 -->
+          <property
+            name="zzmm"
+            column="zzmm"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 所在班级 -->
+          <property
+            name="className"
+            column="className"
+            type="string"
+            length="30"
+          />
+
+          <!-- 简单字符串属性: 联系电话 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单图片属性: 个人照片 -->
+          <property
+            name="photo"
+            column="photo"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 家庭地址 -->
+          <property
+            name="address"
+            column="address"
+            type="string"
+            length="80"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

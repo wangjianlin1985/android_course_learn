@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="HomeworkUpload" table="HomeworkUpload">
+
+          <!-- 主键记录编号 -->
+          <id name="uploadId" column="uploadId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 作业标题 -->
+          <many-to-one name="homeworkTaskObj"
+            column="homeworkTaskObj"
+            class="HomeworkTask"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 提交的学生 -->
+          <many-to-one name="studentObj"
+            column="studentObj"
+            class="Student"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单图片属性: 作业文件 -->
+          <property
+            name="homeworkFile"
+            column="homeworkFile"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 提交时间 -->
+          <property
+            name="uploadTime"
+            column="uploadTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单图片属性: 批改结果文件 -->
+          <property
+            name="resultFile"
+            column="resultFile"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 批改时间 -->
+          <property
+            name="pigaiTime"
+            column="pigaiTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单整型属性: 是否批改 -->
+          <property
+            name="pigaiFlag"
+            column="pigaiFlag"
+            type="int"
+
+          />
+
+          <!-- 简单字符串属性: 评语 -->
+          <property
+            name="pingyu"
+            column="pingyu"
+            type="string"
+            length="80"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

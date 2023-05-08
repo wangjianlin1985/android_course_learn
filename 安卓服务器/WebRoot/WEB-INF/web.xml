@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	
+	<!-- 指定spring的配置文件，默认从web根目录寻找配置文件，我们可以通过spring提供的classpath:前缀指定从类路径下寻找 -->
+	<context-param>
+	   <param-name>contextConfigLocation</param-name>
+	   <param-value>classpath:beans.xml</param-value>
+	</context-param>
+	
+	
+	<!-- 对Spring容器进行实例化 -->
+	<listener>
+	      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+	<!-- struts启用配置 -->
+	<filter>
+	      <filter-name>struts2</filter-name> 
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    
+    
+    <!-- 登录验证servlet配置 -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+      
+    <!-- 用户注册servlet配置 -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 上传图片servlet配置 -->
+    <servlet>
+        <servlet-name>UpPhotoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.UpPhotoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpPhotoServlet</servlet-name>
+        <url-pattern>/UpPhotoServlet</url-pattern>
+    </servlet-mapping> 
+    
+    <!-- 学生信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/StudentServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 教师信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>TeacherServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.TeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TeacherServlet</servlet-name>
+        <url-pattern>/TeacherServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 课程信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>CourseInfoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.CourseInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CourseInfoServlet</servlet-name>
+        <url-pattern>/CourseInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 课件信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>KejianServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.KejianServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KejianServlet</servlet-name>
+        <url-pattern>/KejianServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 章信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>ChapterServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.ChapterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChapterServlet</servlet-name>
+        <url-pattern>/ChapterServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 视频信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>VideoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.VideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VideoServlet</servlet-name>
+        <url-pattern>/VideoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 习题信息管理servlet配置 -->
+    <servlet>
+        <servlet-name>ExerciseServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.ExerciseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExerciseServlet</servlet-name>
+        <url-pattern>/ExerciseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 在线问答管理servlet配置 -->
+    <servlet>
+        <servlet-name>QuestionServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.QuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionServlet</servlet-name>
+        <url-pattern>/QuestionServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 作业任务管理servlet配置 -->
+    <servlet>
+        <servlet-name>HomeworkTaskServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.HomeworkTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeworkTaskServlet</servlet-name>
+        <url-pattern>/HomeworkTaskServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 上传的作业管理servlet配置 -->
+    <servlet>
+        <servlet-name>HomeworkUploadServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.HomeworkUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeworkUploadServlet</servlet-name>
+        <url-pattern>/HomeworkUploadServlet</url-pattern>
+    </servlet-mapping>
+
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
